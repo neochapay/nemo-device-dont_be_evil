@@ -33,7 +33,7 @@ mkdir -p $RPM_BUILD_ROOT/lib/firmware/rtlwifi/
 install -p -c -m644 configs/fuse.conf $RPM_BUILD_ROOT/etc/modules-load.d/
 install -p -c -m644 configs/r8723bs.conf $RPM_BUILD_ROOT/etc/modules-load.d/
 install -p -c -m644 configs/system.conf $RPM_BUILD_ROOT/etc/sysconfig/statefs/
-install -p -c -m644 configs/eglfs-config.json $RPM_BUILD_ROOT/etc
+install -p -c -m644 configs/eglfs-config.json $RPM_BUILD_ROOT/etc/
 install -p -c -m644 configs/dont_be_evil.conf $RPM_BUILD_ROOT/var/lib/environment/compositor/
 
 cp firmware/rtl8723* $RPM_BUILD_ROOT/lib/firmware/rtlwifi/
