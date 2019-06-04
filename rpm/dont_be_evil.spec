@@ -26,15 +26,21 @@ PinePhone64.
 mkdir -p $RPM_BUILD_ROOT/etc/sysconfig/statefs/
 mkdir -p $RPM_BUILD_ROOT/etc/modules-load.d/
 mkdir -p $RPM_BUILD_ROOT/var/lib/environment/compositor
+mkdir -p $RPM_BUILD_ROOT/lib/firmware/rtlwifi/
 
 install -p -c -m644 configs/fuse.conf $RPM_BUILD_ROOT/etc/modules-load.d/
+install -p -c -m644 configs/r8723bs.conf $RPM_BUILD_ROOT/etc/modules-load.d/
 install -p -c -m644 configs/system.conf $RPM_BUILD_ROOT/etc/sysconfig/statefs/
 install -p -c -m644 configs/eglfs-config.json $RPM_BUILD_ROOT/etc
 install -p -c -m644 configs/dont_be_evil.conf $RPM_BUILD_ROOT/var/lib/environment/compositor/
 
+cp firmware/rtl8723* $RPM_BUILD_ROOT/lib/firmware/rtlwifi/
+
 %files
 %defattr(-,root,root,-)
 %{_sysconfdir}/modules-load.d/fuse.conf
+%{_sysconfdir}/modules-load.d/r8723bs.conf
+/lib/firmware/
 %config %{_sysconfdir}/eglfs-config.json
 %config %{_sysconfdir}/sysconfig/statefs/system.conf
 %config /var/lib/environment/compositor/dont_be_evil.conf
