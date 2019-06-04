@@ -13,6 +13,8 @@ Requires:   mesa-llvmpipe-dri-swrast-driver
 Requires:   mesa-llvmpipe-dri-sun4i-driver
 Requires:   qt5-plugin-platform-eglfs
 
+Requires:  kernel-dont_be_evil-modules
+
 %description
 This package contains the config files specifided for
 PinePhone64.
