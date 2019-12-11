@@ -17,6 +17,9 @@ Requires:  kernel-dont_be_evil
 Requires:  kernel-dont_be_evil-modules
 Requires:  dontbeevil-firmware
 
+Requires:  gpsd >= 3.19
+Requires:  geoclue-provider-gpsd3
+
 %description
 This package contains the config files specifided for
 PinePhone64.
@@ -37,6 +40,8 @@ cp -r sparce/* $RPM_BUILD_ROOT/
 %{_sysconfdir}/modules-load.d/fuse.conf
 %{_sysconfdir}/modules-load.d/r8723bs.conf
 %{_sysconfdir}/systemd
+%{_sysconfdir}/default
+%{_sysconfdir}/gpsd
 
 /lib/systemd/
 
