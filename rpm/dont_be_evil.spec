@@ -45,6 +45,7 @@ cp -r sparce/* $RPM_BUILD_ROOT/
 %{_sysconfdir}/default
 %{_sysconfdir}/gpsd
 %{_sysconfdir}/pulse
+%{_sysconfdir}/sensorfw
 
 /lib/systemd/
 /var/lib/nemo-pulseaudio-parameters
