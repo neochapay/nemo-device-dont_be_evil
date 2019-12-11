@@ -52,6 +52,7 @@ cp -r sparce/* $RPM_BUILD_ROOT/
 /var/lib/nemo-pulseaudio-parameters
 
 %{_bindir}/unmute-sound-card.sh
+%{_bindir}/enable_modem.sh
 
 %config %{_sysconfdir}/eglfs-config.json
 %config %{_sysconfdir}/sysconfig/statefs/system.conf
