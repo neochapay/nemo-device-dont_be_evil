@@ -19,6 +19,7 @@ Requires:  dontbeevil-firmware
 
 Requires:  gpsd >= 3.19
 Requires:  geoclue-provider-gpsd3
+Requires:  alsa-utils
 
 %description
 This package contains the config files specifided for
@@ -39,11 +40,16 @@ cp -r sparce/* $RPM_BUILD_ROOT/
 %defattr(-,root,root,-)
 %{_sysconfdir}/modules-load.d/fuse.conf
 %{_sysconfdir}/modules-load.d/r8723bs.conf
+%{_sysconfdir}/sysconfig
 %{_sysconfdir}/systemd
 %{_sysconfdir}/default
 %{_sysconfdir}/gpsd
+%{_sysconfdir}/pulse
 
 /lib/systemd/
+/var/lib/nemo-pulseaudio-parameters
+
+%{_bindir}/unmute-sound-card.sh
 
 %config %{_sysconfdir}/eglfs-config.json
 %config %{_sysconfdir}/sysconfig/statefs/system.conf
