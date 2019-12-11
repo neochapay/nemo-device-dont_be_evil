@@ -27,15 +27,7 @@ PinePhone64.
 %build
 
 %install
-mkdir -p $RPM_BUILD_ROOT/etc/sysconfig/statefs/
-mkdir -p $RPM_BUILD_ROOT/etc/modules-load.d/
-mkdir -p $RPM_BUILD_ROOT/var/lib/environment/compositor
-
-install -p -c -m644 configs/fuse.conf $RPM_BUILD_ROOT/etc/modules-load.d/
-install -p -c -m644 configs/r8723bs.conf $RPM_BUILD_ROOT/etc/modules-load.d/
-install -p -c -m644 configs/system.conf $RPM_BUILD_ROOT/etc/sysconfig/statefs/
-install -p -c -m644 configs/eglfs-config.json $RPM_BUILD_ROOT/etc/
-install -p -c -m644 configs/dont_be_evil.conf $RPM_BUILD_ROOT/var/lib/environment/compositor/
+mkdir -p $RPM_BUILD_ROOT
 
 #sparce copy
 cp -r sparce/* $RPM_BUILD_ROOT/
