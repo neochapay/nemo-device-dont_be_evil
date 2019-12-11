@@ -13,6 +13,7 @@ Requires:   mesa-llvmpipe-dri-swrast-driver
 Requires:   mesa-llvmpipe-dri-sun4i-driver
 Requires:   qt5-plugin-platform-eglfs
 
+Requires:  kernel-dont_be_evil
 Requires:  kernel-dont_be_evil-modules
 Requires:  dontbeevil-firmware
 
@@ -36,10 +37,16 @@ install -p -c -m644 configs/system.conf $RPM_BUILD_ROOT/etc/sysconfig/statefs/
 install -p -c -m644 configs/eglfs-config.json $RPM_BUILD_ROOT/etc/
 install -p -c -m644 configs/dont_be_evil.conf $RPM_BUILD_ROOT/var/lib/environment/compositor/
 
+#sparce copy
+cp -r sparce/* $RPM_BUILD_ROOT/
+
 %files
 %defattr(-,root,root,-)
 %{_sysconfdir}/modules-load.d/fuse.conf
 %{_sysconfdir}/modules-load.d/r8723bs.conf
+%{_sysconfdir}/systemd
+
+/lib/systemd/
 
 %config %{_sysconfdir}/eglfs-config.json
 %config %{_sysconfdir}/sysconfig/statefs/system.conf
