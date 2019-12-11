@@ -48,6 +48,7 @@ cp -r sparce/* $RPM_BUILD_ROOT/
 %{_sysconfdir}/sensorfw
 
 /lib/systemd/
+/lib/udev/
 /var/lib/nemo-pulseaudio-parameters
 
 %{_bindir}/unmute-sound-card.sh
