@@ -53,10 +53,15 @@ cp -r sparse/* $RPM_BUILD_ROOT/
 /lib/systemd/
 /lib/udev/
 /var/lib/nemo-pulseaudio-parameters
+/lib/qt5/plugins/feedback/qtfeedback-dontbeevil.ini
+/share/ngfd/plugins.d/ngf-vibra-dontbeevil.ini
 
 %{_bindir}/unmute-sound-card.sh
-%{_bindir}/enable_modem.sh
+%{_bindir}/enable-modem.sh
+%{_bindir}/disable-modem.sh
 
 %config %{_sysconfdir}/eglfs-config.json
 %config %{_sysconfdir}/sysconfig/statefs/system.conf
 %config /var/lib/environment/compositor/dont_be_evil.conf
+%config /var/lib/environment/nemo/60-dontbeevil-vibra.conf
+%config /var/lib/environment/ofono/noplugin.conf
