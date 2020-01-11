@@ -16,7 +16,9 @@ Requires:   qt5-plugin-platform-eglfs
 Requires:  kernel-dont_be_evil
 Requires:  kernel-dont_be_evil-modules
 Requires:  dontbeevil-firmware
-Requires: qt5-feedback-haptics-ffmemless
+Requires:  qt5-feedback-haptics-ffmemless
+
+Requires:  sensorfw-qt5 >= 0.11.4
 
 Requires:  gpsd >= 3.19
 Requires:  geoclue-provider-gpsd3
