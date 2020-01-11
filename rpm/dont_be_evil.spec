@@ -24,6 +24,14 @@ Requires:  gpsd >= 3.19
 Requires:  geoclue-provider-gpsd3
 Requires:  alsa-utils
 
+#provide services for startup user session
+Requires:   systemd-config-mer
+Requires:   nemo-mobile-session-common
+
+#provide keyboard
+Requires:   maliit-plugins
+
+
 %description
 This package contains the config files specifided for
 PinePhone64.
