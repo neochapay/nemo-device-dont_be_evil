@@ -35,7 +35,7 @@ PinePhone64.
 mkdir -p $RPM_BUILD_ROOT
 
 #sparce copy
-cp -r sparce/* $RPM_BUILD_ROOT/
+cp -r sparse/* $RPM_BUILD_ROOT/
 
 %files
 %defattr(-,root,root,-)
