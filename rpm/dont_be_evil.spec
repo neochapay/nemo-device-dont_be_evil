@@ -8,12 +8,12 @@ License:    BSD
 URL:        https://github.com/neochapay/nemo-device-dont_be_evil
 Source0:    %{name}-%{version}.tar.bz2
 
-Requires:   mesa-llvmpipe-dri-lima-driver
-Requires:   mesa-llvmpipe-dri-swrast-driver
-Requires:   mesa-llvmpipe-dri-sun4i-driver
+Requires:   mesa-llvmpipe-dri-lima-driver >= 19.3
+Requires:   mesa-llvmpipe-dri-swrast-driver >= 19.3
+Requires:   mesa-llvmpipe-dri-sun4i-driver >= 19.3
 Requires:   qt5-plugin-platform-eglfs
 
-Requires:  kernel-dont_be_evil
+Requires:  kernel-dont_be_evil >= 5.4
 Requires:  kernel-dont_be_evil-modules
 Requires:  dontbeevil-firmware
 Requires:  qt5-feedback-haptics-ffmemless
