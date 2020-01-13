@@ -72,4 +72,4 @@ cp -r sparse/* $RPM_BUILD_ROOT/
 %config %{_sysconfdir}/sysconfig/statefs/system.conf
 %config /var/lib/environment/compositor/dont_be_evil.conf
 %config /var/lib/environment/nemo/60-dontbeevil-vibra.conf
-%config /var/lib/environment/ofono/noplugin.conf
+%config /var/lib/environment/ofono/*.conf
