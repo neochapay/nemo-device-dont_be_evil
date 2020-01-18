@@ -57,6 +57,7 @@ cp -r sparse/* $RPM_BUILD_ROOT/
 %{_sysconfdir}/gpsd
 %{_sysconfdir}/pulse
 %{_sysconfdir}/sensorfw
+%{_sysconfdir}/mce
 
 /lib/systemd/
 /lib/udev/
