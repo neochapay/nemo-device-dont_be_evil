@@ -1,9 +1,0 @@
-[Unit]
-Description=Unmutes the A64 sound card at boot for PulseAudio
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/unmute-sound-card.sh
-
-[Install]
-WantedBy=sound.target
