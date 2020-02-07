@@ -23,6 +23,7 @@ Requires:  sensorfw-qt5 >= 0.11.4
 Requires:  gpsd >= 3.19
 Requires:  geoclue-provider-gpsd3
 Requires:  alsa-utils
+Requires:  pulseaudio-module-keepalive
 
 #provide services for startup user session
 Requires:   systemd-config-mer
