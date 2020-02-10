@@ -44,34 +44,17 @@ PinePhone64.
 
 %install
 mkdir -p $RPM_BUILD_ROOT
+rm -rf tmp/
+mkdir -p tmp/
+
+#create list of files
+echo "%defattr(-,root,root,-)" > tmp/sparse.files
+cd sparse/
+find . \( -type f -o -type l \) -print | sed 's/^.//' | sed 's/\/etc/%config \/etc/g' > ../tmp/sparse.files
+cd ../
 
 #sparce copy
 cp -r sparse/* $RPM_BUILD_ROOT/
 
-%files
+%files -f tmp/sparse.files
 %defattr(-,root,root,-)
-%{_sysconfdir}/modules-load.d/fuse.conf
-%{_sysconfdir}/modules-load.d/r8723bs.conf
-%{_sysconfdir}/sysconfig
-%{_sysconfdir}/systemd
-%{_sysconfdir}/default
-%{_sysconfdir}/gpsd
-%{_sysconfdir}/pulse
-%{_sysconfdir}/sensorfw
-%{_sysconfdir}/mce
-
-/lib/systemd/
-/lib/udev/
-/var/lib/nemo-pulseaudio-parameters
-/lib/qt5/plugins/feedback/qtfeedback-dontbeevil.ini
-/share/ngfd/plugins.d/ngf-vibra-dontbeevil.ini
-
-%{_bindir}/unmute-sound-card.sh
-%{_bindir}/enable-modem.sh
-%{_bindir}/disable-modem.sh
-
-%config %{_sysconfdir}/eglfs-config.json
-%config %{_sysconfdir}/sysconfig/statefs/system.conf
-%config /var/lib/environment/compositor/dont_be_evil.conf
-%config /var/lib/environment/nemo/60-dontbeevil-vibra.conf
-%config /var/lib/environment/ofono/*.conf
