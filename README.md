@@ -4,6 +4,7 @@
 
 
 ## Links for download
+[Version 0.6](https://yadi.sk/d/gwZoHr9OmdHp3g)
 
 [Version 0.5](https://yadi.sk/d/fj3oodP3Kl1QIg)
 
@@ -12,7 +13,6 @@
 ## Know bugs
 
 * Voicecall not work
-* GPS not work
 * Sounds not work
 * Cameras not work
 
