@@ -1,9 +1,15 @@
 #!/bin/bash
+<<<<<<< HEAD
 # Generator script for boot.mount
 # Makes sure that the right /boot partition is mounted depending on the boot media
 
 SERVICE_NAME=boot.mount
 GENERATOR_DIR=$1 # Normal generator
+=======
+
+SERVICE_NAME=boot.mount
+GENERATOR_DIR=$3
+>>>>>>> 63fbcca... Fix path of system-generators
 UNIT_FILE=$GENERATOR_DIR/$SERVICE_NAME
 WHAT=`mount | grep " / " | awk '{print $1}' | sed 's/p2/p1/g'`
 
