@@ -24,6 +24,9 @@ Requires:  gpsd >= 3.19
 Requires:  geoclue-provider-gpsd3
 Requires:  alsa-utils
 Requires:  pulseaudio-module-keepalive
+Requires:  qt5-qtmultimedia-plugin-mediaservice-gstmediacapture
+Requires:  qt5-plugin-generic-evdev
+Requires:  mce-plugin-libhybris-nondroid
 
 #provide services for startup user session
 Requires:   systemd-config-mer
@@ -32,6 +35,8 @@ Requires:   nemo-mobile-session-common
 #provide keyboard
 Requires:   maliit-plugins
 
+# WiFi/BT regulator DB
+Requires:   wireless-regdb
 
 %description
 This package contains the config files specifided for
