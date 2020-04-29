@@ -37,6 +37,7 @@ Requires:   maliit-plugins
 
 # WiFi/BT regulator DB
 Requires:   wireless-regdb
+Requires:   bluez5-tools
 
 %description
 This package contains the config files specifided for
