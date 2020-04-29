@@ -1,0 +1,8 @@
+NAME="Pine64 PinePhone"
+ID=pine64
+MER_HA_DEVICE=pinephone
+MER_HA_VENDOR=pine64
+VERSION="0.9"
+VERSION_ID=0.9
+PRETTY_NAME=" 0.9"
+HOME_URL="https://nemomobile.net/"
