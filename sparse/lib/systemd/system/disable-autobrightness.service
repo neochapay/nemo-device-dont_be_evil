@@ -3,7 +3,7 @@ Description=Disable autobrightness
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/droid/disable-autobrightness.sh
+ExecStart=/usr/bin/disable-autobrightness.sh
 RemainAfterExit=yes
 
 [Install]
