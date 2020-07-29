@@ -1,6 +1,6 @@
 Name:       nemo-device-dont_be_evil
 Summary:    Config files for Pine64
-Version:    0.9
+Version:    0.10
 Release:    0
 BuildArch:  noarch
 Group:      System/Base
