@@ -13,7 +13,7 @@ Requires:   mesa-dri-swrast-driver >= 19.3
 Requires:   mesa-dri-sun4i-driver >= 19.3
 Requires:   qt5-plugin-platform-eglfs
 
-Requires:  kernel-dont_be_evil >= 5.4
+Requires:  kernel-dont_be_evil >= 5.6
 Requires:  kernel-dont_be_evil-modules
 Requires:  dontbeevil-firmware
 Requires:  qt5-feedback-haptics-ffmemless
@@ -39,6 +39,8 @@ Requires:   maliit-plugins
 Requires:   wireless-regdb
 Requires:   bluez5-tools
 
+#Camera:
+Requires: v4l-utils
 
 #OHM
 Requires:  policy-settings-common
