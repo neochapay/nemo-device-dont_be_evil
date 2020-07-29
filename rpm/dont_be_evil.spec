@@ -39,6 +39,24 @@ Requires:   maliit-plugins
 Requires:   wireless-regdb
 Requires:   bluez5-tools
 
+
+#OHM
+Requires:  policy-settings-common
+Requires:  swi-prolog-library
+Requires:  ohm-configs-default
+Requires:  ohm-plugin-route
+Requires:  ohm-plugin-media
+Requires:  ohm-plugin-signaling
+Requires:  ohm-plugin-accessories
+Requires:  ohm
+Requires:  ohm-plugin-resolver
+Requires:  ohm-plugins-dbus
+Requires:  ohm-plugin-profile
+Requires:  ohm-plugin-ruleengine
+Requires:  ohm-plugins-misc
+Requires:  ohm-plugin-core
+Requires:  ohm-plugin-dspep
+
 %description
 This package contains the config files specifided for
 PinePhone64.
