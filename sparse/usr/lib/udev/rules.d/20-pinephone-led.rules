@@ -1,0 +1,11 @@
+#  SPDX-License-Identifier: LGPL-2.1+
+
+ACTION=="remove", GOTO="pinephone_led_end"
+
+# Setup the front LED for use by feedbackd
+SUBSYSTEM=="leds", DEVPATH=="*/*:indicator", ENV{FEEDBACKD_TYPE}="led", RUN+="/usr/libexec/fbd-ledctrl -p %S%p -t pattern -G video"
+
+# Setup the flash LED for use by flashlight
+SUBSYSTEM=="leds", KERNEL=="white:flash", RUN+="/bin/chmod g+w /sys%p/brightness /sys%p/flash_strobe", RUN+="/bin/chown :video /sys%p/brightness /sys%p/flash_strobe"
+
+LABEL="pinephone_led_end"

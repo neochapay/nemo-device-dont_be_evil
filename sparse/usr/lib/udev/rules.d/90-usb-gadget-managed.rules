@@ -1,0 +1,3 @@
+# USB gadget device are unmanaged by default, but we want to configure it
+# using NM, so keep it managed
+SUBSYSTEM=="net", ACTION=="add|change", ENV{DEVTYPE}=="gadget", ENV{NM_UNMANAGED}="0"
