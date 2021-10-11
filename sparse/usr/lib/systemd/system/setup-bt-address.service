@@ -5,7 +5,7 @@ After=bluetooth.service
 [Service]
 Type=simple
 ExecStartPre=/bin/sleep 5
-ExecStart=/usr/bin/droid/droid-get-bt-address.sh
+ExecStart=/usr/bin/droid-get-bt-address.sh
 RemainAfterExit=yes
 
 [Install]
