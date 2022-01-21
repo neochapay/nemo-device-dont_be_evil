@@ -1,0 +1,10 @@
+[Unit]
+Description=NemoMobuile Post Install
+After=pinephone-post-install.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nemomobile-post-install.sh
+
+[Install]
+WantedBy=default.target
