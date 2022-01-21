@@ -1,7 +1,14 @@
 #!/bin/sh
 # This is the nemomobile post install script for PinePhone devices!
-gpasswd -a "manjaro" autologin
-
+while true
+do
+    if id -u "manjaro" >/dev/null 2>&1; then
+	gpasswd -a "manjaro" autologin
+	break
+    else
+	sleep 1
+    fi
+done
 # Disable this service, so it only gets run on first boot
 systemctl disable nemomobile-post-install.service
 
