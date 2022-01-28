@@ -9,6 +9,9 @@ do
 	sleep 1
     fi
 done
+
+chown -R manjaro.users /home/manjaro/
+
 # Disable this service, so it only gets run on first boot
 systemctl disable nemomobile-post-install.service
 
