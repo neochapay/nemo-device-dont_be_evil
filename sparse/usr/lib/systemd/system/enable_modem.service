@@ -1,9 +1,0 @@
-[Unit]
-Description=Enable qmi modem
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/enable_modem.sh
-
-[Install]
-WantedBy=network.target
