@@ -1,0 +1,1 @@
+CONFIG="-n --file=/etc/pulse/pinephone_nemo.pa"

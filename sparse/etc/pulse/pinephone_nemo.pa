@@ -20,7 +20,7 @@
 
 .fail
 
-### Sailfish OS specific PulseAudio modules
+### NemoMobile specific PulseAudio modules
 load-module module-keepalive
 load-module module-meego-parameters cache=1 directory=/var/lib/nemo-pulseaudio-parameters
 load-module module-match table=/etc/pulse/x-maemo-match.table key=application.name
@@ -47,8 +47,6 @@ load-module module-meego-mainvolume virtual_stream=true
 
 ### Automatically restore the volume of streams
 # Requred for mainvolume control to work
-.include /etc/pulse/bluez5_stream_restore.pa
-
 load-module module-role-ducking trigger_roles=notification,warning ducking_roles=x-maemo volume=-12dB duck_while_corked=true
 
 load-module module-policy-enforcement
