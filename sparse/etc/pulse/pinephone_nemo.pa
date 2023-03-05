@@ -23,11 +23,6 @@
 ### NemoMobile specific PulseAudio modules
 load-module module-keepalive
 load-module module-meego-parameters cache=1 directory=/var/lib/nemo-pulseaudio-parameters
-load-module module-match table=/etc/pulse/x-maemo-match.table key=application.name
-
-### Automatically augment property information from .desktop files
-### stored in /usr/share/application
-load-module module-augment-properties
 
 ### Should be after module-*-restore but before module-*-detect
 load-module module-switch-on-port-available
@@ -46,8 +41,17 @@ load-module module-null-source source_name=source.fake.sco rate=8000 channels=1
 load-module module-meego-mainvolume virtual_stream=true
 
 ### Automatically restore the volume of streams
+load-module module-stream-restore-nemo restore_device=no restore_volume=yes restore_muted=no route_table=/etc/pulse/x-maemo-route.table fallback_table=/etc/pulse/x-maemo-stream-restore.table use_voice=false
+load-module module-match table=/etc/pulse/x-maemo-match.table key=application.name
+
+### Automatically augment property information from .desktop files
+### stored in /usr/share/application
+load-module module-augment-properties
+
+
+### Automatically restore the volume of streams
 # Requred for mainvolume control to work
-load-module module-role-ducking trigger_roles=notification,warning ducking_roles=x-maemo volume=-12dB duck_while_corked=true
+load-module module-role-ducking trigger_roles=notification,warning ducking_roles=x-maemo volume=-12dB use_source_trigger=true
 
 load-module module-policy-enforcement
 
@@ -104,16 +108,11 @@ load-module module-gsettings
 .fail
 .endif
 
-
 ### Automatically restore the default sink/source when changed by the user
 ### during runtime
 ### NOTE: This should be loaded as early as possible so that subsequent modules
 ### that look up the default sink/source get the right value
 load-module module-default-device-restore
-
-### Automatically move streams to the default sink if the sink they are
-### connected to dies, similar for sources
-load-module module-rescue-streams
 
 ### Make sure we always have a sink around, even if it is a null sink.
 load-module module-always-sink
@@ -150,3 +149,11 @@ load-module module-filter-apply
 .ifexists module-dbus-protocol.so
 load-module module-dbus-protocol
 .endif
+
+load-module module-udev-detect.so
+
+### Set default sink and source to sink.null and source.null, respectively. PulseAudio default
+### sink/source handling will move orphaned sink-inputs and source-outputs to default ones.
+### Policy enforcement module then moves the streams to new appropriate sinks or sources.
+set-default-sink sink.null
+set-default-source source.null
